@@ -14,14 +14,14 @@ else
 {
     <AuthorizeView>
         <Authorized>
-            <button class="btn-outline-primary" @onclick="() => OpenCreatePost()"> Create Post</button>
+            <button class="btn-outline-primary" @onclick="() => OpenCreatePost()">Create Post</button>
         </Authorized>
     </AuthorizeView>
 
     if (!SubForumToOpen.Posts.Any()) 
     {
         <p>
-            <em> No posts available...</em>
+            <em>No posts available...</em>
         </p>
     }
     else 
@@ -76,6 +76,6 @@ else
 
     private void OpenCreatePost() 
     {
-        navMgr.NavigateTo($"/Create-Post/{ForumId}/{SubForumId}");
+        navMgr.NavigateTo($"/CreatePost/{ForumId}/{SubForumId}");
     }
 }
