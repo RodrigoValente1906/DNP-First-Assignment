@@ -1,0 +1,94 @@
+@page "/SubForums"
+@using Entities
+@using Contracts
+@inject IForumService forumService
+@inject NavigationManager navMgr
+
+<div class="entirePage">
+    @if (forumToOpen == null) 
+    {
+        <p>
+            <em>Loading...</em>
+        </p>
+    }
+    else 
+    {
+        <AuthorizeView>
+            <Authorized>
+                <button class="btn-outline-primary" @onclick="() => OpenCreateSubForum()"> Create Sub-forum</button>
+            </Authorized>
+        </AuthorizeView>
+        if (!forumToOpen.SubForums.Any()) 
+        {
+            <p>
+                <em>This forum does not contain any sub forums yet</em>
+            </p>
+        }
+        else 
+        {
+            <div class="container d-flex justify-content-center mt-50 mb-50">
+                <div class="row">
+                    @foreach (SubForum subForum in forumToOpen.SubForums) {
+                        <div class="col-md-8 col-sm-8 col-lg-6">
+                            <div class="card blog-horizontal" @onclick="@(() => OpenPosts(subForum.Id))">
+                                <div class="card-body">
+                                    <div >
+                                        <h5>
+                                            <label class="card-title "> @subForum.Title</label>
+                                        </h5>
+                                    </div>
+                                    <label>@GetDescToDisplay(subForum)</label>
+                                </div>
+                                <div class="card-footer d-sm-flex justify-content-sm-between align-items-sm-center">
+                                    <ul class="list-inline list-inline-dotted mb-0">
+                                        <li class="list-inline-item">
+                                            <span class="oi oi-star" style="color: yellowgreen"></span>
+                                            <span class="oi oi-star"></span>
+                                            <span class="oi oi-star"></span>
+                                            <span class="oi oi-star"></span>
+                                            <span class="text-muted ml-1">(12)</span>
+                                        </li>
+                                    </ul>
+                                    <div class="mt-2 mt-sm-0">
+                                        <label> @subForum.Posts.Count posts </label>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    }
+                </div>
+            </div>
+        }
+    }
+</div>
+
+@code {
+    [Parameter]
+    public int Id { get; set; }
+
+    private Forum? forumToOpen;
+
+    protected override async Task OnInitializedAsync() 
+    {
+        forumToOpen = await forumService.GetForumByIdAsync(Id);
+    }
+
+    private string GetDescToDisplay(SubForum subForum) 
+    {
+        if (subForum.Description.Length <= 200)
+        {
+            return subForum.Description;
+        }
+        return subForum.Description.Substring(0, 200);
+    }
+
+    private void OpenCreateSubForum() 
+    {
+        navMgr.NavigateTo($"/CreateSubForum/{Id}");
+    }
+
+    private void OpenPosts(int id) 
+    {
+        navMgr.NavigateTo($"/All-Posts/{this.Id}/{id}");
+    }
+}

@@ -1,0 +1,55 @@
+@page "/Register"
+@using Contracts
+@inject IUserService userService;
+@inject NavigationManager navMgr;
+
+<div class="card">
+    <h3>Register</h3>
+    <div class="field">
+        <label>Username:</label>
+        <input type="text" @bind="username"/>
+    </div>
+    <div class="field">
+        <label>Password:</label>
+        <input type="password" @bind="password"/>
+    </div>
+    @if (!string.IsNullOrEmpty(errorlabel)) 
+    {
+        <div class="field">
+            <label style="color: red"></label>
+            @errorlabel
+        </div>
+    }
+    <div class="field">
+        <button class="createButton" @onclick="CreateUserAsync">Register</button> 
+        <hr/>
+        <p>Already have an account?</p>
+        <button class="createButton" @onclick="LoginAsync">Login</button>
+    </div>
+
+</div>
+
+@code {
+    private string username;
+    private string password;
+    private string errorlabel;
+
+    private async Task CreateUserAsync() 
+    {
+        errorlabel = string.Empty;
+        try 
+        {
+            await userService.RegisterUserAsync(username, password);
+            navMgr.NavigateTo("/");
+        }
+        catch (Exception e) 
+        {
+            errorlabel = $"Error : {e.Message}";
+        }
+    }
+
+    private async Task LoginAsync() 
+    {
+        navMgr.NavigateTo("/Login");
+    }
+}
