@@ -15,13 +15,13 @@
     {
         <AuthorizeView>
             <Authorized>
-                <button class="btn-outline-primary" @onclick="() => OpenCreateSubForum()"> Create Sub-forum</button>
+                <button class="btn-outline-primary" @onclick="() => OpenCreateSubForum()"> Create Sub Forum</button>
             </Authorized>
         </AuthorizeView>
         if (!forumToOpen.SubForums.Any()) 
         {
             <p>
-                <em>This forum does not contain any sub forums yet</em>
+                <em>This forum doesn't have any sub forums</em>
             </p>
         }
         else 
@@ -46,7 +46,7 @@
                                             <span class="oi oi-star"></span>
                                             <span class="oi oi-star"></span>
                                             <span class="oi oi-star"></span>
-                                            <span class="text-muted ml-1">(12)</span>
+                                            <span class="text-muted ml-1">(10)</span>
                                         </li>
                                     </ul>
                                     <div class="mt-2 mt-sm-0">

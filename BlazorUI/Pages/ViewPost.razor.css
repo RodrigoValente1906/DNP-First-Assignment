@@ -93,12 +93,11 @@ hr {
     text-align: center;
     margin: 50px auto auto;
 }
+
 .field {
     margin-top: 20px;
 }
 
 .body  {
     border:slategray solid;
-    border-radius: 8%;
-    box-shadow: 5px 10px #2196F3;
 }
