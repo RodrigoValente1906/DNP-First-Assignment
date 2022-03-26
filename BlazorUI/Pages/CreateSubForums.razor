@@ -15,24 +15,18 @@
                 <ValidationSummary/>
                 <div class="form-group field">
                     <span>
-                        <label>Sub Forum Title:</label>
-                    </span>
-                    <span>
-                        <InputTextArea rows="2" @bind-Value="NewSubForumItem.Title"/>
+                        <InputTextArea rows="2" placeholder="Title" @bind-Value="NewSubForumItem.Title"/>
                     </span>
                 </div>
 
                 <div class="form-group field">
                     <span>
-                        <label>Description:</label>
-                    </span>
-                    <span>
-                        <InputTextArea rows="7" @bind-Value="NewSubForumItem.Description"/>
+                        <InputTextArea rows="7" placeholder="Description" @bind-Value="NewSubForumItem.Description"/>
                     </span>
                 </div>
 
                 <p class="actions">
-                    <button class="acceptbtn" type="submit">Create Forum</button>
+                    <button class="acceptbtn" type="submit">Create</button>
                 </p>
             </EditForm>
             @if (!string.IsNullOrEmpty(errorLabel))
@@ -42,15 +36,15 @@
             @if (showModal) 
             {
                 <Modal>
-                    <p>New forum created</p>
-                    <button class="btn btn-outline-dark" @onclick="Proceed"> OK</button>
+                    <p>Sub Forum Created</p>
+                    <button class="btn btn-outline-dark" @onclick="Proceed">OK</button>
                 </Modal>
             }
         </div> 
     </Authorized>
     <NotAuthorized>
         <NotLoggedIn>
-            <p>You need to be logged in to create a forum.</p>
+            <p>You need to be logged in to create a sub forum.</p>
         </NotLoggedIn>
 
     </NotAuthorized>

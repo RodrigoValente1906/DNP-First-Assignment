@@ -17,7 +17,7 @@ else
     <AuthorizeView>
         <Authorized>
             <button class="btn-outline-primary" @onclick="() => OpenCreateForum()">
-                Create forum
+                Create Forum
             </button>
         </Authorized>
     </AuthorizeView>
@@ -40,7 +40,7 @@ else
                             <div class="card-body text-center">
                                 <h4 class="card-title">@forum.ForumName</h4>
                                 <p class="text-muted">@forum.ForumDescription</p>
-                                <a class="btn btn-outline-primary btn-sm" @onclick="@(() => OpenForum(forum.Id))" data-abc="true">Open forum</a>
+                                <a class="btn btn-outline-primary btn-sm" @onclick="@(() => OpenForum(forum.Id))" data-abc="true">Open Forum</a>
                             </div>
                         </div>
                     </div>

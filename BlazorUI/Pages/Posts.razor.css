@@ -28,9 +28,9 @@
 }
 
 .body {
-    border:slategray solid;
+    border-color: #4B0082;
 }
 
 .body:hover {
-    background-color: #dee3e0;
+    background-color: #DCDCDC;
 }

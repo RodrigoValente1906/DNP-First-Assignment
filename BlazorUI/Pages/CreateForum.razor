@@ -15,24 +15,18 @@
                 <ValidationSummary/>
                 <div class="form-group field">
                     <span>
-                        <label>Forum Name:</label>
-                    </span>
-                    <span>
-                        <InputTextArea rows="2" @bind-Value="newForumItem.ForumName"/>
+                        <InputTextArea rows="2" placeholder="Name" @bind-Value="newForumItem.ForumName"/>
                     </span>
                 </div>
 
                 <div class="form-group field">
                     <span>
-                        <label>Description:</label>
-                    </span>
-                    <span>
-                        <InputTextArea rows="7" @bind-Value="newForumItem.ForumDescription"/>
+                        <InputTextArea rows="7" placeholder="Description" @bind-Value="newForumItem.ForumDescription"/>
                     </span>
                 </div>
 
                 <p class="actions">
-                    <button class="acceptbtn" type="submit">Create Forum</button>
+                    <button class="acceptbtn" type="submit">Create</button>
                 </p>
             </EditForm>
             @if (!string.IsNullOrEmpty(errorLabel))

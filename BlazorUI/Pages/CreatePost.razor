@@ -14,24 +14,18 @@
                 <ValidationSummary/>
                 <div class="form-group field">
                     <span>
-                        <label>Header:</label>
-                    </span>
-                    <span>
-                        <InputTextArea rows="2" @bind-Value="NewPostItem.Header"/>
+                        <InputTextArea rows="2" placeholder="Header" @bind-Value="NewPostItem.Header"/>
                     </span>
                 </div>
 
                 <div class="form-group field">
                     <span>
-                        <label>Body:</label>
-                    </span>
-                    <span>
-                        <InputTextArea rows="7" @bind-Value="NewPostItem.Body"/>
+                        <InputTextArea rows="7" placeholder="Body" @bind-Value="NewPostItem.Body"/>
                     </span>
                 </div>
 
                 <p class="actions">
-                    <button class="acceptbtn" type="submit">Create Post</button>
+                    <button class="acceptbtn" type="submit">Create</button>
                 </p>
             </EditForm>
             @if (!string.IsNullOrEmpty(errorLabel)) 
@@ -41,8 +35,8 @@
             @if (showModal) 
             {
                 <Modal>
-                    <p>Post created</p>
-                    <button class="btn btn-outline-dark" @onclick="Proceed"> OK</button>
+                    <p>Post Created</p>
+                    <button class="btn btn-outline-dark" @onclick="Proceed">OK</button>
                 </Modal>
             }
         </div>

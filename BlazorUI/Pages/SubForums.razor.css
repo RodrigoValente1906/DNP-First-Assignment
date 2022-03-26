@@ -1,5 +1,6 @@
 .entirePage {
     margin: 10px;
+    font-family: Roboto, -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol", "Noto Color Emoji";
     font-size: .8125rem;
     font-weight: 400;
     line-height: 1.5385;
@@ -18,20 +19,20 @@
 
 .card {
     position: relative;
-    display: -ms-flexbox;
     margin-bottom: 25px;
-    display: flex;
+    display: inline-block;
+    width: 300px;
     -ms-flex-direction: column;
     flex-direction: column;
     word-wrap: break-word;
     background-color: #fff;
     background-clip: border-box;
-    border:slategray solid;
-    height: 250px;
+    border-color: #4B0082;
+    height: 150px;
 }
 
-.card:hover{
-    background-color: #dee3e0;
+.card:hover {
+    background-color: #DCDCDC;
 }
 
 @media (min-width: 576px) {
