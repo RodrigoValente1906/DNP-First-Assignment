@@ -3,39 +3,40 @@
 @inject IUserService userService;
 @inject NavigationManager navMgr;
 
-<div class="card">
-    <h3>Register</h3>
-    <div class="field">
-        <label>Username:</label>
-        <input type="text" @bind="username"/>
-    </div>
-    <div class="field">
-        <label>Password:</label>
-        <input type="password" @bind="password"/>
-    </div>
-    @if (!string.IsNullOrEmpty(errorlabel)) 
-    {
-        <div class="field">
-            <label style="color: red"></label>
-            @errorlabel
+<body>
+<main>
+    <div class="row">
+        <div class="colm-form">
+            <div class="form-container">
+                <h3> Register </h3>
+                <input type="text" placeholder="Username" @bind="username">
+                <input type="password" placeholder="Password" @bind="password">
+
+                @if (!string.IsNullOrEmpty(errorLabel))
+                {
+                    <div class="field">
+                        <label style="color: red"></label>
+                        @errorLabel
+                    </div>
+                }
+
+                <button class="btn-new" @onclick="CreateUserAsync">Register</button>
+                <p>Already have an account?</p>
+                <button class="btn-login" @onclick="LoginAsync">Login</button>
+            </div>
         </div>
-    }
-    <div class="field">
-        <button class="createButton" @onclick="CreateUserAsync">Register</button> 
-        <hr/>
-        <p>Already have an account?</p>
-        <button class="createButton" @onclick="LoginAsync">Login</button>
     </div>
-</div>
+</main>
+</body>
 
 @code {
     private string username;
     private string password;
-    private string errorlabel;
+    private string errorLabel;
 
     private async Task CreateUserAsync() 
     {
-        errorlabel = string.Empty;
+        errorLabel = string.Empty;
         try 
         {
             await userService.RegisterUserAsync(username, password);
@@ -43,7 +44,7 @@
         }
         catch (Exception e) 
         {
-            errorlabel = $"Error : {e.Message}";
+            errorLabel = $"Error : {e.Message}";
         }
     }
 

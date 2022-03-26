@@ -5,30 +5,31 @@
 
 <AuthorizeView>
     <NotAuthorized>
-        <div class="card">
-            <h3>Login</h3>
-            <div class="field">
-                <label>Username:</label>
-                <input type="text" @bind="username"/>
-            </div>
-            <div class="field">
-                <label>Password:</label>
-                <input type="password" @bind="password"/>
-            </div>
-            @if (!string.IsNullOrEmpty(errorLabel)) 
-            {
-                <div class="field">
-                    <label style="color: red"></label>
-                    @errorLabel
+        <body>
+        <main>
+            <div class="row">
+                <div class="colm-form">
+                    <div class="form-container">
+                        <h3> Login </h3>
+                        <input type="text" placeholder="Username" @bind="username">
+                        <input type="password" placeholder="Password" @bind="password">
+
+                        @if (!string.IsNullOrEmpty(errorLabel))
+                        {
+                            <div class="field">
+                                <label style="color: red"></label>
+                                @errorLabel
+                            </div>
+                        }
+
+                        <button class="btn-login" @onclick="LoginAsync">Login</button>
+                        <button class="btn-new" @onclick="RegisterAccountAsync">Register</button>
+                    </div>
                 </div>
-            }
-            <div class="field">
-                <button class="loginbtn" @onclick="LoginAsync">Login</button>
-                <hr/> 
-                <p>Don't have an account?</p>
-                <button class="loginbtn" @onclick="RegisterAccountAsync">Register</button>
             </div>
-        </div>  
+        </main>
+        </body>
+        
     </NotAuthorized>
     <Authorized>
         <div class="card">
