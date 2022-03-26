@@ -28,34 +28,8 @@ hr {
     cursor: pointer
 }
 
-.icons i {
-    font-size: 25px
-}
-
-.icons .fa-heart {
-    color: red
-}
-
-.icons .fa-smile-o {
-    color: yellow;
-    font-size: 29px
-}
-
-.rounded-image {
-    border-radius: 50% !important;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    height: 50px;
-    width: 50px
-}
-
 .name {
     font-weight: 600
-}
-
-.comment-text {
-    font-size: 12px
 }
 
 .status small {
@@ -65,10 +39,6 @@ hr {
 
 .form-control {
     border-radius: 26px
-}
-
-.comment-input {
-    position: relative
 }
 
 .fonts {
