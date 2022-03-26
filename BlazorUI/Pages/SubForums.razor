@@ -1,4 +1,4 @@
-@page "/SubForums"
+@page "/SubForums/{Id:int}"
 @using Entities
 @using Contracts
 @inject IForumService forumService
@@ -84,11 +84,11 @@
 
     private void OpenCreateSubForum() 
     {
-        navMgr.NavigateTo($"/CreateSubForum/{Id}");
+        navMgr.NavigateTo($"/CreateSubForums/{Id}");
     }
 
     private void OpenPosts(int id) 
     {
-        navMgr.NavigateTo($"/All-Posts/{this.Id}/{id}");
+        navMgr.NavigateTo($"/Posts/{this.Id}/{id}");
     }
 }

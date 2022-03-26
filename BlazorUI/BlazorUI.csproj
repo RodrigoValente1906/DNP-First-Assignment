@@ -13,4 +13,8 @@
       <ProjectReference Include="..\JsonDataAccess\JsonDataAccess.csproj" />
     </ItemGroup>
 
+    <ItemGroup>
+      <Folder Include="Pages\Forum" />
+    </ItemGroup>
+
 </Project>

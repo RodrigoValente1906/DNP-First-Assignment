@@ -1,6 +1,7 @@
-@page "/CreatePost"
+@page "/CreatePost/{ForumId:int}/{SubForumId:int}"
 @using Entities
 @using Contracts
+@using UIElements
 @inject IForumService forumService;
 @inject NavigationManager navMgr
 
@@ -75,7 +76,7 @@
     private void Proceed() 
     {
         showModal = false;
-        navMgr.NavigateTo($"/All-Posts/{ForumId}/{SubForumId}");
+        navMgr.NavigateTo($"/Posts/{ForumId}/{SubForumId}");
     }
     
 }

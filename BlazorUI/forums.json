@@ -3,7 +3,21 @@
     "ForumName": "Cristiano Ronaldo",
     "ForumDescription": "Best in the world",
     "Id": 1,
-    "SubForums": [],
+    "SubForums": [
+      {
+        "Title": "Ronaldo",
+        "Description": "best in the world ",
+        "Id": 1,
+        "Posts": [
+          {
+            "Id": 1,
+            "Owner": null,
+            "Header": "Ronaldo",
+            "Body": "best in the world"
+          }
+        ]
+      }
+    ],
     "Users": null
   }
 ]

@@ -1,7 +1,8 @@
-@page "/CreateSubForums"
+@page "/CreateSubForums/{ForumId:int}"
 @using Contracts
 @using Entities
 @using Microsoft.AspNetCore.Components
+@using UIElements
 @inject IForumService forumService;
 @inject NavigationManager navMgr;
 

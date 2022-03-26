@@ -1,6 +1,7 @@
 @using Contracts
 @inject NavigationManager navMgr
 @inject IAuthService authService
+@namespace UIElements
 
 <AuthorizeView>
     <Authorized>
@@ -12,7 +13,6 @@
 </AuthorizeView> 
 
 @code {
-
     private void Login()
     {
         navMgr.NavigateTo("/Login");
