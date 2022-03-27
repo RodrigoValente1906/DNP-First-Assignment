@@ -17,8 +17,7 @@
           }
         ]
       }
-    ],
-    "Users": null
+    ]
   },
   {
     "ForumName": "Basketball",
@@ -35,10 +34,15 @@
             "Owner": null,
             "Header": "About Neemias Queta",
             "Body": "Name: Neemias Esdras Barbosa Queta\nAge: 22\nHeight: 213 cm\nWeight: 112 kg"
+          },
+          {
+            "Id": 2,
+            "Owner": null,
+            "Header": "Team",
+            "Body": "Sacramento Kings"
           }
         ]
       }
-    ],
-    "Users": null
+    ]
   }
 ]
