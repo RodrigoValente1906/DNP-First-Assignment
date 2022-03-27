@@ -34,10 +34,10 @@
                                 <div class="card-body">
                                     <div >
                                         <h5>
-                                            <label class="card-title "> @subForum.Title</label>
+                                            <label class="card-title ">@subForum.Title</label>
                                         </h5>
                                     </div>
-                                    <label>@GetDescToDisplay(subForum)</label>
+                                    <label>@GetDescriptionToDisplay(subForum)</label>
                                 </div>
                                 <div class="card-footer d-sm-flex justify-content-sm-between align-items-sm-center">
                                     <div class="mt-2 mt-sm-0">
@@ -64,7 +64,7 @@
         forumToOpen = await forumService.GetForumByIdAsync(Id);
     }
 
-    private string GetDescToDisplay(SubForum subForum) 
+    private string GetDescriptionToDisplay(SubForum subForum) 
     {
         if (subForum.Description.Length <= 200)
         {

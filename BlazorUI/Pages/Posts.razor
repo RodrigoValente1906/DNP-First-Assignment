@@ -21,7 +21,7 @@ else
     if (!SubForumToOpen.Posts.Any()) 
     {
         <p>
-            <em>No posts available...</em>
+            <em>This sub forum doesn't have any post</em>
         </p>
     }
     else 
@@ -34,7 +34,7 @@ else
                         <div class="card body">
                             <div class="card-body">
                                 <h4 class="card-title text-dark mt-2">@post.Header</h4>
-                                <p class="card-text">@DescriptionToDisplay(post)...</p>
+                                <p class="card-text">@DescriptionToDisplay(post).</p>
                                 <small>Click to read more...</small>
                                 <div class="mt-4 about d-flex justify-content-between align-items-center">
                                 </div>

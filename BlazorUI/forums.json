@@ -2,46 +2,17 @@
   {
     "ForumName": "Football",
     "ForumDescription": "Everything about football",
-    "Id": 3,
+    "Id": 1,
     "SubForums": [
       {
         "Title": "Cristiano Ronaldo",
-        "Description": "Best in the world",
+        "Description": "Everything about Cristiano Ronaldo",
         "Id": 1,
         "Posts": [
           {
             "Id": 1,
-            "Header": "Manchester United",
-            "Body": "Currently playing for Manchester United"
-          },
-          {
-            "Id": 2,
-            "Header": "About CR7",
-            "Body": "Name: Cristiano Ronaldo dos Santos Aveiro\nAge: 37\nHeight: 187 cm\nWeight: 79 kg"
-          }
-        ]
-      }
-    ]
-  },
-  {
-    "ForumName": "Basketball",
-    "ForumDescription": "Everything about basketball",
-    "Id": 4,
-    "SubForums": [
-      {
-        "Title": "Neemias Queta",
-        "Description": "First portuguese in NBA",
-        "Id": 1,
-        "Posts": [
-          {
-            "Id": 1,
-            "Header": "About Neemias Queta",
-            "Body": "Name: Neemias Esdras Barbosa Queta\nAge: 22\nHeight: 213 cm\nWeight: 112 kg"
-          },
-          {
-            "Id": 2,
-            "Header": "Team",
-            "Body": "Sacramento Kings"
+            "Header": "Club",
+            "Body": "Playing for Manchester United"
           }
         ]
       }

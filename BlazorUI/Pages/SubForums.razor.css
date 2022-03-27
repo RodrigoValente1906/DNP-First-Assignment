@@ -1,6 +1,5 @@
 .entirePage {
     margin: 10px;
-    font-family: Roboto, -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol", "Noto Color Emoji";
     font-size: .8125rem;
     font-weight: 400;
     line-height: 1.5385;
@@ -21,11 +20,11 @@
     position: relative;
     margin-bottom: 25px;
     display: inline-block;
-    width: 300px;
+    width: 400px;
     -ms-flex-direction: column;
     flex-direction: column;
     word-wrap: break-word;
-    background-color: #fff;
+    background-color: #FFF;
     background-clip: border-box;
     border-color: #4B0082;
     height: 150px;
@@ -35,29 +34,3 @@
     background-color: #DCDCDC;
 }
 
-@media (min-width: 576px) {
-    .blog-horizontal .card-img-actions {
-        width: 45%;
-        float: left;
-        max-width: 25rem;
-        z-index: 10
-    }
-}
-
-a {
-    text-decoration: none !important
-}
-
-.course-button {
-    border: 1px solid #007bff;
-    padding: 5px;
-    background-color: #007bff;
-    padding-right: 10px;
-    padding-top: 3px;
-    color: #fff;
-    border-radius: 3px
-}
-
-.course-button:hover {
-    color: #fff
-}
