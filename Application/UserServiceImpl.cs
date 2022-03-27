@@ -39,7 +39,7 @@ public class UserServiceImpl : IUserService
 
         if (password.Length <= 5) 
         {
-            throw new Exception("Password must be greater than five characters due to security reasons");
+            throw new Exception("Password must be greater than five characters");
         }
 
         int count = 0;
@@ -54,7 +54,7 @@ public class UserServiceImpl : IUserService
 
         if (count == 0) 
         {
-            throw new Exception("Password must have at least one digit for security reasons");
+            throw new Exception("Password must have at least one digit");
         }
     }
     
@@ -63,11 +63,6 @@ public class UserServiceImpl : IUserService
         if (string.IsNullOrEmpty(username)) 
         {
             throw new Exception("Username cannot be empty");
-        }
-
-        if (username.Length <= 5) 
-        {
-            throw new Exception("Username must be greater than five characters");
         }
     }
     

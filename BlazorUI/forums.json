@@ -1,18 +1,29 @@
 [
   {
+    "ForumName": "Basketball",
+    "ForumDescription": "Everything about basketball",
+    "Id": 2,
+    "SubForums": []
+  },
+  {
     "ForumName": "Football",
     "ForumDescription": "Everything about football",
-    "Id": 1,
+    "Id": 3,
     "SubForums": [
       {
         "Title": "Cristiano Ronaldo",
-        "Description": "Everything about Cristiano Ronaldo",
+        "Description": "Everything about cristiano ronaldo",
         "Id": 1,
         "Posts": [
           {
             "Id": 1,
             "Header": "Club",
-            "Body": "Playing for Manchester United"
+            "Body": "Manchester United"
+          },
+          {
+            "Id": 2,
+            "Header": "Previous Club",
+            "Body": "Juventus"
           }
         ]
       }
