@@ -11,9 +11,13 @@
         "Posts": [
           {
             "Id": 1,
-            "Owner": null,
             "Header": "Manchester United",
             "Body": "Currently playing for Manchester United"
+          },
+          {
+            "Id": 2,
+            "Header": "About CR7",
+            "Body": "Name: Cristiano Ronaldo dos Santos Aveiro\nAge: 37\nHeight: 187 cm\nWeight: 79 kg"
           }
         ]
       }
@@ -31,13 +35,11 @@
         "Posts": [
           {
             "Id": 1,
-            "Owner": null,
             "Header": "About Neemias Queta",
             "Body": "Name: Neemias Esdras Barbosa Queta\nAge: 22\nHeight: 213 cm\nWeight: 112 kg"
           },
           {
             "Id": 2,
-            "Owner": null,
             "Header": "Team",
             "Body": "Sacramento Kings"
           }
