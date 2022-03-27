@@ -18,16 +18,16 @@ public class UserDAOImpl : IUserDAO
         await jsonUserContext.SaveChanges();
     }
 
-    public async Task<bool> IsUsernameTaken(string username) 
-    {
-        ICollection<User> allUsers = jsonUserContext.Users;
-        return allUsers.Any(user => user.Username.Equals(username));
-    }
-
     public Task<User> GetUserAsync(string username) 
     {
         List<User> users = jsonUserContext.Users.ToList();
         User? find= users.Find(user => user.Username.Equals(username));
         return Task.FromResult(find);
+    }
+    
+    public async Task<bool> IsUsernameTaken(string username) 
+    {
+        ICollection<User> allUsers = jsonUserContext.Users;
+        return allUsers.Any(user => user.Username.Equals(username));
     }
 }

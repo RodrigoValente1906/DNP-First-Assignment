@@ -33,12 +33,6 @@ public class JsonUserContext
         }
     }
     
-    private void LoadData() 
-    {
-        string usersAsJson = File.ReadAllText(userPath);
-        users = JsonSerializer.Deserialize<List<User>>(usersAsJson);
-    }
-
     private async void CreateFile() 
     {
         users = new List<User>();
@@ -54,5 +48,11 @@ public class JsonUserContext
         });
         await File.WriteAllTextAsync(userPath, userAsJson);
         users = null;
+    }
+    
+    private void LoadData() 
+    {
+        string usersAsJson = File.ReadAllText(userPath);
+        users = JsonSerializer.Deserialize<List<User>>(usersAsJson);
     }
 }

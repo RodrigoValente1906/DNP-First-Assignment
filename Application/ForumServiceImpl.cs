@@ -17,6 +17,16 @@ public class ForumServiceImpl : IForumService
         await forumDao.AddForumAsync(newForumItem);
     }
     
+    public async Task AddSubForumAsync(SubForum newSubForumItem, int forumId) 
+    {
+        await forumDao.AddSubForumAsync(newSubForumItem, forumId);
+    }
+    
+    public async Task AddPostAsync(Post newPostItem, int forumId, int subForumId) 
+    {
+        await forumDao.AddPostAsync(newPostItem, forumId, subForumId);
+    }
+    
     public async Task<Forum> GetForumByIdAsync(int id) 
     {
         return await forumDao.GetForumByIdAsync(id);
@@ -32,21 +42,8 @@ public class ForumServiceImpl : IForumService
         return await forumDao.GetSubForumAsync(forumId, subForumId);
     }
 
-    public async Task AddSubForumAsync(SubForum newSubForumItem, int forumId) 
-    {
-        await forumDao.AddSubForumAsync(newSubForumItem, forumId);
-    }
-    
-    public async Task AddPostAsync(Post newPostItem, int forumId, int subForumId) 
-    {
-        await forumDao.AddPostAsync(newPostItem, forumId, subForumId);
-    }
-    
     public async Task<Post?> GetPostAsync(int forumId, int subForumId, int postId) 
     {
         return await forumDao.GetPostAsync(forumId, subForumId, postId);
     }
-    
-    
-
 }

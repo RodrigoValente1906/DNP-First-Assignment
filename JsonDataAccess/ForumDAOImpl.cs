@@ -12,17 +12,22 @@ public class ForumDAOImpl : IForumDAO
         this.jsonForumContext = jsonForumContext;
     }
     
-    public async Task<List<Forum>> GetAllForumsAsync() 
+    public async Task AddForumAsync(Forum newForumItem) 
     {
-        return jsonForumContext.Forums.ToList();
-    }
+        if (jsonForumContext.Forums.Any()) 
+        {
+            int largestId = jsonForumContext.Forums.Max(forum => forum.Id);
+            newForumItem.Id = largestId + 1;
+        }
+        else 
+        {
+            newForumItem.Id = 1;
+        }
 
-    public async Task<SubForum?> GetSubForumAsync(int forumId, int subForumId) 
-    {
-        Forum forum = await GetForumByIdAsync(forumId);
-        return forum.SubForums.First(subForum => subForum.Id == subForumId);
+        jsonForumContext.Forums.Add(newForumItem);
+        await jsonForumContext.SaveChanges();
     }
-
+    
     public async Task AddSubForumAsync(SubForum newSubForumItem, int forumId) 
     {
         Forum forumById = await GetForumByIdAsync(forumId);
@@ -57,31 +62,26 @@ public class ForumDAOImpl : IForumDAO
         await jsonForumContext.SaveChanges();
     }
     
+    public async Task<Forum> GetForumByIdAsync(int id) 
+    {
+        return jsonForumContext.Forums.First(forum => forum.Id == id);
+    }
+    
+    public async Task<List<Forum>> GetAllForumsAsync() 
+    {
+        return jsonForumContext.Forums.ToList();
+    }
+
+    public async Task<SubForum?> GetSubForumAsync(int forumId, int subForumId) 
+    {
+        Forum forum = await GetForumByIdAsync(forumId);
+        return forum.SubForums.First(subForum => subForum.Id == subForumId);
+    }
+    
     public async Task<Post?> GetPostAsync(int forumId, int subForumId, int postId) 
     {
         Post? first = (await GetSubForumAsync(forumId, subForumId))?.Posts.First(post => post.Id == postId);
         jsonForumContext.Dispose();
         return first;
-    }
-    
-    public async Task AddForumAsync(Forum newForumItem) 
-    {
-        if (jsonForumContext.Forums.Any()) 
-        {
-            int largestId = jsonForumContext.Forums.Max(forum => forum.Id);
-            newForumItem.Id = largestId + 1;
-        }
-        else 
-        {
-            newForumItem.Id = 1;
-        }
-
-        jsonForumContext.Forums.Add(newForumItem);
-        await jsonForumContext.SaveChanges();
-    }
-
-    public async Task<Forum> GetForumByIdAsync(int id) 
-    {
-        return jsonForumContext.Forums.First(forum => forum.Id == id);
     }
 }
