@@ -4,9 +4,9 @@ namespace Contracts;
 
 public interface IForumService
 {
-    public Task AddForumAsync(Forum newForumItem);
-    public Task AddSubForumAsync(SubForum newSubForumItem, int forumId);
-    public Task AddPostAsync(Post newPostItem, int forumId, int subForumId);
+    public Task<Forum> AddForumAsync(Forum newForumItem);
+    public Task<SubForum> AddSubForumAsync(SubForum newSubForumItem, int forumId);
+    public Task<Post> AddPostAsync(Post newPostItem, int forumId, int subForumId);
     public Task<Forum> GetForumByIdAsync(int id);
     public Task<List<Forum>> GetAllForumsAsync();
     public Task<SubForum?> GetSubForumAsync(int forumId, int subForumId);

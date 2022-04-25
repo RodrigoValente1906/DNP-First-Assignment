@@ -12,19 +12,22 @@ public class ForumServiceImpl : IForumService
         this.forumDao = forumDao;
     }
     
-    public async Task AddForumAsync(Forum newForumItem)
+    public async Task<Forum> AddForumAsync(Forum newForumItem)
     {
         await forumDao.AddForumAsync(newForumItem);
+        return newForumItem;
     }
     
-    public async Task AddSubForumAsync(SubForum newSubForumItem, int forumId) 
+    public async Task<SubForum> AddSubForumAsync(SubForum newSubForumItem, int forumId) 
     {
         await forumDao.AddSubForumAsync(newSubForumItem, forumId);
+        return newSubForumItem;
     }
     
-    public async Task AddPostAsync(Post newPostItem, int forumId, int subForumId) 
+    public async Task<Post> AddPostAsync(Post newPostItem, int forumId, int subForumId) 
     {
         await forumDao.AddPostAsync(newPostItem, forumId, subForumId);
+        return newPostItem;
     }
     
     public async Task<Forum> GetForumByIdAsync(int id) 

@@ -12,7 +12,7 @@ public class UserServiceImpl : IUserService
         this.userDao = userDao;
     }
     
-    public async Task RegisterUserAsync(string username, string password) 
+    public async Task<User> RegisterUserAsync(string username, string password) 
     {
         ValidateUsername(username);
         ValidatePassword(password);
@@ -22,6 +22,7 @@ public class UserServiceImpl : IUserService
             throw new Exception($"Username, {username} already taken. Please choose another one");
         }
         await userDao.RegisterUserAsync(new User(username, password));
+        return new User(username, password);
     }
     
     public async Task<User> GetUserAsync(string username) 
