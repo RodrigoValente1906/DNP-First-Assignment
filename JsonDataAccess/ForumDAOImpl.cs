@@ -12,7 +12,7 @@ public class ForumDAOImpl : IForumDAO
         this.jsonForumContext = jsonForumContext;
     }
     
-    public async Task AddForumAsync(Forum newForumItem) 
+    public async Task<Forum> AddForumAsync(Forum newForumItem) 
     {
         if (jsonForumContext.Forums.Any()) 
         {
@@ -26,9 +26,10 @@ public class ForumDAOImpl : IForumDAO
 
         jsonForumContext.Forums.Add(newForumItem);
         await jsonForumContext.SaveChanges();
+        return newForumItem;
     }
     
-    public async Task AddSubForumAsync(SubForum newSubForumItem, int forumId) 
+    public async Task<SubForum> AddSubForumAsync(SubForum newSubForumItem, int forumId) 
     {
         Forum forumById = await GetForumByIdAsync(forumId);
         if (forumById.SubForums.Any()) 
@@ -43,6 +44,7 @@ public class ForumDAOImpl : IForumDAO
         
         jsonForumContext.Forums.First(forum => forum.Id == forumId).SubForums.Add(newSubForumItem);
         await jsonForumContext.SaveChanges();
+        return newSubForumItem;
     }
     
     public async Task AddPostAsync(Post newPostItem, int forumId, int subForumId) 

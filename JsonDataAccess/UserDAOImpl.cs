@@ -12,10 +12,11 @@ public class UserDAOImpl : IUserDAO
         this.jsonUserContext = jsonUserContext;
     }
 
-    public async Task RegisterUserAsync(User user) 
+    public async Task<User> RegisterUserAsync(User user) 
     {
         jsonUserContext.Users.Add(user);
         await jsonUserContext.SaveChanges();
+        return user;
     }
 
     public Task<User> GetUserAsync(string username) 
