@@ -14,4 +14,11 @@ public class Forum
     {
         SubForums = new List<SubForum>();
     }
+
+    public Forum(int id, string forumName, string forumDescription)
+    {
+        Id = id;
+        ForumName = forumName;
+        ForumDescription = forumDescription;
+    }
 }

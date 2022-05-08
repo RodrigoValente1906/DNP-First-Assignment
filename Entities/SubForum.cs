@@ -14,5 +14,12 @@ public class SubForum
     {
         Posts = new List<Post>();
     }
+
+    public SubForum(int id, string title, string description)
+    {
+        Id = id;
+        Title = title;
+        Description = description;
+    }
     
 }

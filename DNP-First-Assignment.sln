@@ -14,6 +14,8 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "WebAPI", "WebAPI\WebAPI.csp
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "RESTClient", "RESTClient\RESTClient.csproj", "{29A890CE-9EA4-442D-8062-07C845F5AF18}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "EFCDataAccess", "EFCDataAccess\EFCDataAccess.csproj", "{C5BFFAEE-2064-4947-B13E-CA3152226EFB}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -48,5 +50,9 @@ Global
 		{29A890CE-9EA4-442D-8062-07C845F5AF18}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{29A890CE-9EA4-442D-8062-07C845F5AF18}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{29A890CE-9EA4-442D-8062-07C845F5AF18}.Release|Any CPU.Build.0 = Release|Any CPU
+		{C5BFFAEE-2064-4947-B13E-CA3152226EFB}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{C5BFFAEE-2064-4947-B13E-CA3152226EFB}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{C5BFFAEE-2064-4947-B13E-CA3152226EFB}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{C5BFFAEE-2064-4947-B13E-CA3152226EFB}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 EndGlobal
