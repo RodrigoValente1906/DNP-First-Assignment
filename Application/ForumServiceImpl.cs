@@ -2,7 +2,7 @@ using Contracts;
 using Entities;
 
 namespace Application;
-
+    
 public class ForumServiceImpl : IForumService
 {
     private IForumDAO forumDao;
@@ -23,7 +23,7 @@ public class ForumServiceImpl : IForumService
         await forumDao.AddSubForumAsync(newSubForumItem, forumId);
         return newSubForumItem;
     }
-    
+
     public async Task<Post> AddPostAsync(Post newPostItem, int forumId, int subForumId) 
     {
         await forumDao.AddPostAsync(newPostItem, forumId, subForumId);
